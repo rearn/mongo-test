@@ -14,12 +14,6 @@ addons:
       - mongodb-org-server
       - mongodb-org-shell
 
-before_script:
-  - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
-
 script:
   - mongo --version
 
-after_success:
-  - coverage report
-  - coveralls
