@@ -8,6 +8,6 @@ plain = "Guido van Rossum is a space alien."
 ciph = obj.encrypt(plain + "XXXXXX")
 decrypt = obj.decrypt(ciph)
 print("plain  :" + plain)
-print("encrypt:" + hexlify(ciph))
-print("decrypt:" + decrypt)
+print("encrypt:" + hexlify(ciph).decode('utf-8'))
+print("decrypt:" + decrypt.decode('utf-8'))
 #assert plain == decrypt, "error"
