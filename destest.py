@@ -6,7 +6,7 @@ plain = "Guido van Rossum is a space alien."
 # 文字数は8の倍数でなければエラーになるのでplainに６文字結合する
 ciph = obj.encrypt(plain + "XXXXXX")
 decrypt = obj.decrypt(ciph)
-print "plain  :", plain
-print "encrypt:", ciph
-print "decrypt:", decrypt
+print("plain  :" + plain)
+print("encrypt:" + ciph)
+print("decrypt:" + decrypt)
 assert plain = decrypt, "error"
