@@ -8,6 +8,6 @@ plain = a.to_bytes(8, 'big')
 # 文字数は8の倍数でなければエラーになるのでplainに６文字結合する
 ciph = obj.encrypt(plain)
 decrypt = obj.decrypt(ciph)
-print("plain  :" + plain.decode('utf-8'))
+print("plain  :" + hexlify(plain).decode('utf-8'))
 print("encrypt:" + hexlify(ciph).decode('utf-8'))
-print("decrypt:" + decrypt.decode('utf-8'))
+print("decrypt:" + hexlify(decrypt).decode('utf-8'))
