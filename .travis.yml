@@ -5,14 +5,7 @@ python:
   - 3.5
   - 3.6
 
-addons:
-  apt:
-    sources:
-      - mongodb-upstart
-      - mongodb-3.2-precise
-    packages:
-      - mongodb-org-server
-      - mongodb-org-shell
+services: mongodb
 
 script:
   - mongo --version
