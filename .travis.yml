@@ -8,5 +8,5 @@ python:
 services: mongodb
 
 script:
-  - mongo --version
+  - python destest.py
 
