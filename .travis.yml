@@ -12,5 +12,5 @@ services: mongodb
 
 script:
   - python destest.py
-  - ls -al
+  - ls ../ -al
 
