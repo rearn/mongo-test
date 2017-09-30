@@ -7,11 +7,11 @@ python:
 
 install:
   - pip install pycrypto
+  - pwd
 
 services: mongodb
 
 script:
   - python destest.py
   - pwd
-  - ls ../../ -al
 

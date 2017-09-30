@@ -3,9 +3,10 @@ from binascii import hexlify
 
 # "abcdefgh" がキーになる(キーは8バイトの長さでなければならない)
 obj = DES.new("abcdefgh", DES.MODE_ECB)
-plain = b"Guido van Rossum is a space alien."
+a = 255
+plain = a.to_bytes(8, 'big') 
 # 文字数は8の倍数でなければエラーになるのでplainに６文字結合する
-ciph = obj.encrypt(plain + b"XXXXXX")
+ciph = obj.encrypt(plain)
 decrypt = obj.decrypt(ciph)
 print("plain  :" + plain.decode('utf-8'))
 print("encrypt:" + hexlify(ciph).decode('utf-8'))
