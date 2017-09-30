@@ -1,0 +1,25 @@
+language: python
+python:
+  - 3.3
+  - 3.4
+  - 3.5
+  - 3.6
+
+addons:
+  apt:
+    sources:
+      - mongodb-upstart
+      - mongodb-3.2-precise
+    packages:
+      - mongodb-org-server
+      - mongodb-org-shell
+
+before_script:
+  - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
+
+script:
+  - mongo --version
+
+after_success:
+  - coverage report
+  - coveralls
