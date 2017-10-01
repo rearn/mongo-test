@@ -6,15 +6,14 @@ python:
   - 3.6
   - "3.7-dev"
   - "nightly"
-  - pypy3.5-5.7.1-beta
+  #- pypy3.5-5.7.1-beta
 
 install:
   - pip install pycrypto
-  - pwd
+  - pip install pymongo
 
 services: mongodb
 
 script:
   - python destest.py
-  - pwd
 
