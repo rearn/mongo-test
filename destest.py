@@ -18,4 +18,4 @@ db = client.my_database
 co = db.my_collection
 co.insert_one(json.dumps({"encrypt": ciph, "decrypt": decrypt}))
 for data in co.find():
-    print data
+    print(data)
