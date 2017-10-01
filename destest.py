@@ -16,6 +16,6 @@ print("decrypt:" + hexlify(decrypt).decode('utf-8'))
 client = pymongo.MongoClient('localhost', 27017)
 db = client.my_database
 co = db.my_collection
-co.insert_one(json.dumps({"encrypt": ciph, "decrypt": decrypt))
+co.insert_one(json.dumps({"encrypt": ciph, "decrypt": decrypt)})
 for data in co.find():
     print data
