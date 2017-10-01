@@ -21,7 +21,8 @@ client = pymongo.MongoClient('localhost', 27017)
 db = client.my_database
 co = db.my_collection
 ca = db.counters
-ca.findAndModify({"_id": "user_id"}, {$inc: { seq: 1 }}, upsert = True)
+ret = ca.command({'findandmodify': 'my_collection', 'update': {'$inc': { 'seq': 1 }}})
+#ca.findAndModify({"_id": "user_id"}, , upsert = True)
 co.insert_one({"num": a, "encrypt": cipj_u, "decrypt": decrypt_u})
 for data in co.find():
     print(data)
