@@ -20,8 +20,7 @@ print("decrypt:" + decrypt_u)
 client = pymongo.MongoClient('localhost', 27017)
 db = client.my_database
 co = db.my_collection
-ca = db.counters
-ret = ca.command('findandmodify', {'update': {'$inc': { 'seq': 1 }}})
+ret = db.command('findandmodify', 'counters', {'update': {'$inc': { 'seq': 1 }}})
 #ca.findAndModify({"_id": "user_id"}, , upsert = True)
 co.insert_one({"num": a, "encrypt": cipj_u, "decrypt": decrypt_u})
 for data in co.find():
