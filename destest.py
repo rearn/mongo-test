@@ -6,8 +6,7 @@ from binascii import hexlify
 # "abcdefgh" がキーになる(キーは8バイトの長さでなければならない)
 obj = DES.new("abcdefgh", DES.MODE_ECB)
 a = 255
-plain = a.to_bytes(8, 'big') 
-# 文字数は8の倍数でなければエラーになるのでplainに６文字結合する
+plain = a.to_bytes(8, 'big')
 ciph = obj.encrypt(plain)
 decrypt = obj.decrypt(ciph)
 
@@ -21,6 +20,11 @@ print("decrypt:" + decrypt_u)
 client = pymongo.MongoClient('localhost', 27017)
 db = client.my_database
 co = db.my_collection
+ca = db.counters
+ca.findAndModify({"_id": "user_id"}, {$inc: { seq: 1 }}, upsert = True)
 co.insert_one({"num": a, "encrypt": cipj_u, "decrypt": decrypt_u})
 for data in co.find():
+    print(data)
+
+for data in ca.find():
     print(data)
