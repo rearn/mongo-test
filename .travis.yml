@@ -15,7 +15,7 @@ install:
 services: mongodb
 
 before_script:
-  - mongo --eval 'db.counters.insert({"id": "user_id", seq: 0});'
+  - bash mongo_insert.sh
 
 script:
   - python destest.py
