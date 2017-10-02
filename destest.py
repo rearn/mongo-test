@@ -21,7 +21,6 @@ client = pymongo.MongoClient('localhost', 27017)
 db = client.my_database
 co = db.my_collection
 ca = db.counters
-ca.insert_one({"id": "user_id", 'seq': 0})
 for i in [1, 2, 3, 4]:
     print(i)
     ret = ca.find_and_modify({'id': 'user_id'}, {'$inc': { 'seq': 1 }})
