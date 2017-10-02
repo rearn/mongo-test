@@ -6,7 +6,8 @@ python:
   - 3.6
   - "3.7-dev"
   - "nightly"
-  allow_failures:
+  - pypy3.5-5.7.1-beta
+allow_failures:
   - pypy3.5-5.7.1-beta
 
 install:
