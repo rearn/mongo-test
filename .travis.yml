@@ -7,7 +7,7 @@ python:
   - "3.7-dev"
   - "nightly"
   allow_failures:
-    - pypy3.5-5.7.1-beta
+  - pypy3.5-5.7.1-beta
 
 install:
   - pip install pycrypto
