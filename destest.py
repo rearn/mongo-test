@@ -4,7 +4,7 @@ import json
 from binascii import hexlify
 
 # "abcdefgh" がキーになる(キーは8バイトの長さでなければならない)
-obj = DES.new("abcdefgh", DES.MODE_ECB)
+obj = DES.new(b'abcdefgh', DES.MODE_ECB)
 a = 255
 plain = a.to_bytes(8, 'big')
 ciph = obj.encrypt(plain)
@@ -16,6 +16,7 @@ decrypt_u = hexlify(decrypt).decode('utf-8')
 
 print("plain  :" + plain_u)
 print("encrypt:" + cipj_u)
+print(ciph)
 print("decrypt:" + decrypt_u)
 client = pymongo.MongoClient('localhost', 27017)
 db = client.my_database
