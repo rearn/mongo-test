@@ -18,7 +18,7 @@ print("plain  :" + plain_u)
 print("encrypt:" + cipj_u)
 print(ciph)
 print("decrypt:" + decrypt_u)
-client = pymongo.MongoClient('localhost', 27017)
+client = pymongo.MongoClient('localhost', 27017, username='test', password='passwd')
 db = client.my_database
 co = db.my_collection
 ca = db.counters
