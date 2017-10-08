@@ -10,7 +10,7 @@ print(cipj_u)
 print(decrypt_u)
 # client = pymongo.MongoClient('localhost', 27017, username='test', password='passwd')
 # client = pymongo.MongoClient('localhost', 27017)
-client = pymongo.MongoClient('mongodb://%s:%s@localhost' % ('test', 'passwd'))
+client = pymongo.MongoClient('mongodb://%s:%s@localhost/database' % ('test', 'passwd'))
 db = client.database
 db.authenticate('test', 'passwd')
 co = db.collection
