@@ -18,8 +18,8 @@ print("plain  :" + plain_u)
 print("encrypt:" + cipj_u)
 print(ciph)
 print("decrypt:" + decrypt_u)
-# client = pymongo.MongoClient('localhost', 27017, username='test', password='passwd')
-client = pymongo.MongoClient('localhost', 27017)
+client = pymongo.MongoClient('localhost', 27017, username='test', password='passwd')
+# client = pymongo.MongoClient('localhost', 27017)
 db = client.database
 db.authenticate('test', 'passwd')
 co = db.collection
