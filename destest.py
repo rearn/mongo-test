@@ -1,23 +1,13 @@
-from Crypto.Cipher import DES
 import pymongo
-import json
-from binascii import hexlify
 
-# "abcdefgh" がキーになる(キーは8バイトの長さでなければならない)
-obj = DES.new(b'abcdefgh', DES.MODE_ECB)
-a = 255
-plain = a.to_bytes(8, 'big')
-ciph = obj.encrypt(plain)
-decrypt = obj.decrypt(ciph)
 
-plain_u   = hexlify(plain).decode('utf-8')
-cipj_u    = hexlify(ciph).decode('utf-8')
-decrypt_u = hexlify(decrypt).decode('utf-8')
+plain_u = 235
+cipj_u = 122
+decrypt_u = 2334
 
-print("plain  :" + plain_u)
-print("encrypt:" + cipj_u)
-print(ciph)
-print("decrypt:" + decrypt_u)
+print(plain_u)
+print(cipj_u)
+print(decrypt_u)
 client = pymongo.MongoClient('localhost', 27017, username='test', password='passwd')
 # client = pymongo.MongoClient('localhost', 27017)
 db = client.database
