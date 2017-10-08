@@ -18,9 +18,10 @@ print("plain  :" + plain_u)
 print("encrypt:" + cipj_u)
 print(ciph)
 print("decrypt:" + decrypt_u)
-client = pymongo.MongoClient('localhost', 27017, username='test', password='passwd')
+# client = pymongo.MongoClient('localhost', 27017, username='test', password='passwd')
+client = pymongo.MongoClient('localhost', 27017)
 db = client.my_database
-# db.authenticate('test', 'passwd')
+db.authenticate('test', 'passwd')
 co = db.my_collection
 ca = db.counters
 #ca.insert_one({"id": "user_id", 'seq': 0})
