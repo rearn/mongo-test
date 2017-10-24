@@ -8,8 +8,8 @@ decrypt_u = 2334
 print(plain_u)
 print(cipj_u)
 print(decrypt_u)
-# client = pymongo.MongoClient('localhost', 27017, username='test', password='passwd')
-client = pymongo.MongoClient('localhost', 27017)
+client = pymongo.MongoClient('localhost', 27017, username='test', password='passwd')
+# client = pymongo.MongoClient('localhost', 27017)
 db = client.database
 db.authenticate('test', 'passwd')
 co = db.collection
