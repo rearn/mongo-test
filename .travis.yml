@@ -9,12 +9,14 @@ python:
   ##- pypy3.5-5.7.1-beta
 
 install:
+  - pip install pycrypto
   - pip install pymongo
 
 services: mongodb
 
 before_script:
-  - python mongo_insert.py
+  - bash mongo_insert.sh
 
 script:
   - python destest.py
+
